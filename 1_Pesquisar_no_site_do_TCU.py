@@ -8,8 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def main():
     # Definindo os caminhos para o EdgeDriver e para o arquivo Excel
-    edgedriver_path = r"C:\Users\AMANDASALLESMARZOLAK\OneDrive - INSS\General - TCC MAP\Códigos\msedgedriver.exe"
-    excel_path = r"C:\Users\AMANDASALLESMARZOLAK\OneDrive - INSS\General - TCC MAP\2 Dados secundários\1 Siorg\Entidades_do_Siorg.xlsx"
+    edgedriver_path = r"COLAR AQUI O CAMINHO PARA O ARQUIVO EDGEDRIVER"
+    excel_path = r"COLAR AQUI O CAMINHO PARA SUA PLANILHA EXCEL COM OS DADOS A SEREM PESQUISADOS"
 
     # Lendo o arquivo Excel para um DataFrame pandas
     df = pd.read_excel(excel_path, sheet_name="Entidades")
@@ -36,7 +36,7 @@ def main():
         # Definindo um intervalo de datas para a pesquisa
         data_inicio_input = driver.find_element(By.ID, "datainiciosessao")
         data_inicio_input.clear()
-        data_inicio_input.send_keys("01/01/2011")
+        data_inicio_input.send_keys("01/01/2013")
 
         data_fim_input = driver.find_element(By.ID, "datafimsessao")
         data_fim_input.clear()
@@ -62,7 +62,7 @@ def main():
         df.at[index, "Resultados"] = result_count
 
         # Salvando o DataFrame atualizado de volta no arquivo Excel
-        df.to_excel(excel_path, sheet_name="Entidades", index=False)
+        df.to_excel(excel_path, sheet_name="Nome da coluna com o nome do órgão público", index=False)
 
     # Fechando o driver do Edge após iterar sobre todas as linhas do DataFrame
     driver.quit()
