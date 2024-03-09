@@ -62,7 +62,7 @@ def main():
         df.at[index, "Resultados"] = result_count
 
         # Salvando o DataFrame atualizado de volta no arquivo Excel
-        df.to_excel(excel_path, sheet_name="Nome da coluna com o nome do órgão público", index=False)
+        df.to_excel(excel_path, sheet_name="Nome do órgão", index=False)
 
     # Fechando o driver do Edge após iterar sobre todas as linhas do DataFrame
     driver.quit()
