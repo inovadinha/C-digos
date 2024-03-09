@@ -13,17 +13,17 @@ import time
 chrome_options = Options()
 
 # Define o caminho do executável do ChromeDriver
-webdriver_service = Service(r"C:\Users\AMANDASALLESMARZOLAK\OneDrive - INSS\General - TCC MAP\Códigos\chromedriver.exe")
+webdriver_service = Service(r"COLAR AQUI O CAMINHO PARA O ARQUIVO EDGEDRIVER")
 
 # Define a pasta de download padrão
-prefs = {"download.default_directory" : r"C:\Users\AMANDASALLESMARZOLAK\OneDrive - INSS\General - TCC MAP\2 Dados secundários\3 TCU\2_Acordaos"}
+prefs = {"download.default_directory" : r"COLAR AQUI O CAMINHO PARA A PASTA ONDE OS ACÓRDÃOS FICARÃO SALVOS"}
 chrome_options.add_experimental_option("prefs", prefs)
 
 # Inicializa o driver
 driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
 
 # Lendo os dados do Excel
-df = pd.read_excel(r"C:\Users\AMANDASALLESMARZOLAK\OneDrive - INSS\General - TCC MAP\2 Dados secundários\3 TCU\2_Baixar.xlsx")
+df = pd.read_excel(r"COLAR AQUI O CAMINHO PARA SUA PLANILHA EXCEL COM OS DADOS DOS ACÓRDÃOS")
 
 # Iterando sobre cada linha do DataFrame
 for i, row in df.iterrows():
